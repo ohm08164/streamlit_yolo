@@ -11,7 +11,7 @@ st.title("Mole classification")
 
 st.write("Upload your Image...")
 
-#model = torch.hub.load('./yolov5', 'custom', path='./last.pt', source='local')
+#model = torch.hub.load('./yolov5', 'custom', path='./best.pt', source='local')
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt', force_reload=True)
 
 uploaded_file = st.file_uploader("Choose .jpg pic ...", type="jpg")
