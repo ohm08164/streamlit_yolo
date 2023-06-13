@@ -13,7 +13,11 @@ st.write("Upload your Image...")
 
 #model = torch.hub.load('./yolov5', 'custom', path='./best.pt', source='local')
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt', force_reload=True)
-
+  
+st.write("หลังจากนั้นนำค่าที่ได้แปลเปลี่ยนให้เป็น % หรือนำไปคูณ 100 ")
+st.write("10-50 ไม่มีแนวโน้มที่จะเป็นมะเร็งไฝ")
+st.write("50-100 มีแนวโน้มที่จะเป็นมะเร็งไฝ")
+  
 uploaded_file = st.file_uploader("Choose .jpg pic ...", type="jpg")
 if uploaded_file is not None:
   
@@ -35,7 +39,6 @@ if uploaded_file is not None:
   #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      turtle
   
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
-  
   
   
   #st.success(detect_class)
