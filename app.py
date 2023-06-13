@@ -9,13 +9,13 @@ import torch, json , cv2 , detect
 
 st.title("Mole classification")
 
-st.write("Upload your Image...")
-  
 st.write("หลังจากนั้นนำค่าที่ได้แปลเปลี่ยนให้เป็น % หรือนำไปคูณ 100 ")
 st.write("10-50 ไม่มีแนวโน้มที่จะเป็นมะเร็งไฝ")
 st.write("50-100 มีแนวโน้มที่จะเป็นมะเร็งไฝ")
   
-#model = torch.hub.load('./yolov5', 'custom', path='./best.pt', source='local')
+st.write("Upload your Image...")
+  
+#model = torch.hub.load('./yolov5', 'custom', path='./last.pt', source='local')
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt', force_reload=True)
 
 uploaded_file = st.file_uploader("Choose .jpg pic ...", type="jpg")
@@ -41,6 +41,7 @@ if uploaded_file is not None:
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
   
+  
   #st.success(detect_class)
   
   outputpath = 'output.jpg'
@@ -51,4 +52,4 @@ if uploaded_file is not None:
       im_base64.save(outputpath)
       img_ = Image.open(outputpath)
       st.image(img_, caption='Model Prediction(s)')
-
+      
