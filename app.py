@@ -9,10 +9,6 @@ import torch, json , cv2 , detect
 
 st.title("Mole classification")
 
-st.write("หลังจากนั้นนำค่าที่ได้แปลเปลี่ยนให้เป็น % หรือนำไปคูณ 100 ")
-st.write("10-50 ไม่มีแนวโน้มที่จะเป็นมะเร็งไฝ")
-st.write("50-100 มีแนวโน้มที่จะเป็นมะเร็งไฝ")
-  
 st.write("Upload your Image...")
   
 #model = torch.hub.load('./yolov5', 'custom', path='./last.pt', source='local')
